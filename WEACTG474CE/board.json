@@ -1,0 +1,8 @@
+{
+    "deploy": [
+        "../deploy.md"
+    ],
+    "mcu": "stm32h7",
+    "product": "WeActStudio STM32G474CoreBoard",
+    "vendor": "WeActStudio"
+}
