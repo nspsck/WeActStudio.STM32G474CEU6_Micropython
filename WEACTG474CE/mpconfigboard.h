@@ -23,9 +23,9 @@
 // #define MICROPY_PY_SOCKET           (0)
 // #define MICROPY_PY_NETWORK          (0)
 
-// Flash storage config, currently not supported by MPY?
-#define MICROPY_HW_SPIFLASH_ENABLE_CACHE            (0)
-#define MICROPY_HW_ENABLE_INTERNAL_FLASH_STORAGE    (1)
+// Flash storage config
+#define MICROPY_HW_SPIFLASH_ENABLE_CACHE            (1)
+#define MICROPY_HW_ENABLE_INTERNAL_FLASH_STORAGE    (0)
 
 #if !MICROPY_HW_ENABLE_INTERNAL_FLASH_STORAGE
 // QSPI flash for storage
