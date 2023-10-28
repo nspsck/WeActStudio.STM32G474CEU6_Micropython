@@ -23,21 +23,21 @@
 // #define MICROPY_PY_SOCKET           (0)
 // #define MICROPY_PY_NETWORK          (0)
 
-// Flash storage config
-#define MICROPY_HW_SPIFLASH_ENABLE_CACHE            (1)
-#define MICROPY_HW_ENABLE_INTERNAL_FLASH_STORAGE    (0)
+// Flash storage config, currently not supported by MPY?
+#define MICROPY_HW_SPIFLASH_ENABLE_CACHE            (0)
+#define MICROPY_HW_ENABLE_INTERNAL_FLASH_STORAGE    (1)
 
 #if !MICROPY_HW_ENABLE_INTERNAL_FLASH_STORAGE
 // QSPI flash for storage
-#define MICROPY_HW_OSPI_PRESCALER           (2) // 100MHz
-#define MICROPY_HW_OSPIFLASH_SIZE_BITS_LOG2 (26)
 #define MICROPY_HW_SPIFLASH_SIZE_BITS       (64 * 1024 * 1024)
-#define MICROPY_HW_OSPIFLASH_CS             (pin_B11)
-#define MICROPY_HW_OSPIFLASH_SCK            (pin_B10)
-#define MICROPY_HW_OSPIFLASH_IO0            (pin_B1)
-#define MICROPY_HW_OSPIFLASH_IO1            (pin_B0)
-#define MICROPY_HW_OSPIFLASH_IO2            (pin_A7)
-#define MICROPY_HW_OSPIFLASH_IO3            (pin_A6)
+#define MICROPY_HW_QSPI_PRESCALER           (2) // 100MHz
+#define MICROPY_HW_QSPIFLASH_SIZE_BITS_LOG2 (26)
+#define MICROPY_HW_QSPIFLASH_CS             (pin_B11)
+#define MICROPY_HW_QSPIFLASH_SCK            (pin_B10)
+#define MICROPY_HW_QSPIFLASH_IO0            (pin_B1)
+#define MICROPY_HW_QSPIFLASH_IO1            (pin_B0)
+#define MICROPY_HW_QSPIFLASH_IO2            (pin_A7)
+#define MICROPY_HW_QSPIFLASH_IO3            (pin_A6)
 
 // SPI flash #1, block device config
 extern const struct _mp_spiflash_config_t spiflash_config;
@@ -54,15 +54,15 @@ extern struct _spi_bdev_t spi_bdev;
 #define MICROPY_HW_CLK_PLLP         (2)
 #define MICROPY_HW_CLK_PLLQ         (8)
 #define MICROPY_HW_CLK_PLLR         (2)
-
-// This is to avoid SPI running at 170 MHz.
-#define MICROPY_HW_CLK_APB1_DIV         (RCC_APB1_DIV2)
-#define MICROPY_HW_CLK_APB2_DIV         (RCC_APB2_DIV2)
+//#define MICROPY_HW_CLK_LAST_FREQ    (1)
 
 // The board has an external 32kHz crystal attached
 #define MICROPY_HW_RTC_USE_LSE              (1)
+#define MICROPY_HW_RTC_USE_US               (0)
+#define MICROPY_HW_RTC_USE_CALOUT           (1)
 #define MICROPY_HW_CLK_USE_HSI48            (1)
 #define MICROPY_HW_RCC_USB_CLKSOURCE        (RCC_USBCLKSOURCE_HSI48)
+#define MICROPY_HW_RCC_RNG_CLKSOURCE        (RCC_RNGCLKSOURCE_HSI48)
 
 // 4 wait states
 #define MICROPY_HW_FLASH_LATENCY    FLASH_LATENCY_4
@@ -91,8 +91,9 @@ extern struct _spi_bdev_t spi_bdev;
 #define MICROPY_HW_I2C2_SDA         (pin_A8)   // A8, F0
 // #define MICROPY_HW_I2C3_SCL       (pin_)   // A8
 // #define MICROPY_HW_I2C3_SDA       (pin_)   // B5, C11
-#define MICROPY_HW_I2C4_SCL         (pin_A13)   // A13
-#define MICROPY_HW_I2C4_SDA         (pin_B7)   // B7
+// Not supported by Micropython yet.
+// #define MICROPY_HW_I2C4_SCL         (pin_A13)   // A13
+// #define MICROPY_HW_I2C4_SDA         (pin_B7)   // B7
 
 // SPI buses
 #define MICROPY_HW_SPI1_NSS         (pin_A15) // A4, A15
