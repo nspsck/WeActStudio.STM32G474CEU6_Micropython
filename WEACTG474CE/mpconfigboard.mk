@@ -7,7 +7,6 @@ LD_FILES = boards/WEACTG474CE/stm32g474.ld boards/common_basic.ld
 
 # Micropython settings.
 MICROPY_VFS_LFS2 ?= 1
-LTO ?= 1
 
 # Provide different variants for the downloads page.
 ifeq ($(BOARD_VARIANT),DP)
