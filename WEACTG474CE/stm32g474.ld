@@ -2,8 +2,8 @@
 MEMORY
 {
     RAM (xrw)       : ORIGIN = 0x20000000, LENGTH = 128K
-    FLASH (rx)      : ORIGIN = 0x08000000, LENGTH = 352K
-    FLASH_FS (rx)   : ORIGIN = 0x08058000, LENGTH = 160K  /* starting @ 352K */
+    FLASH (rx)      : ORIGIN = 0x08000000, LENGTH = 384K
+    FLASH_FS (rx)   : ORIGIN = 0x08060000, LENGTH = 128K  /* starting @ 384K */
 }
 
 /* Generate a link error if heap and stack don't fit into RAM */
@@ -19,7 +19,7 @@ _micropy_hw_internal_flash_storage_ram_cache_start = _micropy_hw_internal_flash_
 /* Define the stack.  The stack is full descending so begins just above last byte
    of RAM.  Note that EABI requires the stack to be 8-byte aligned for a call. */
 _estack = _micropy_hw_internal_flash_storage_ram_cache_start - _estack_reserve;
-_sstack = _estack - 8K; /* tunable */
+_sstack = _estack - 16K; /* tunable */
 
 _heap_start = _ebss; /* heap starts just after statically allocated memory */
 _heap_end = _sstack;

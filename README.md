@@ -1,7 +1,14 @@
 # WeActStudio.STM32G474CEU6_Micropython
 
-This is a untested WIP, I am still waiting for my board to be shipped.
-However, this could serve as a base line if you got your board faster and want to start rightaway.
+## Status
+Untested:
+- QSPI Flash.
+
+What works:
+- Everything except changing frequency using `freq()` provided either by `machine` or `pyb` module.
+
+Weird behavior:
+- Floating points and integer arithmetics seems to be slower than the F4 series on the same clock by a huge margin.
 
 ## Required tweaks for QSPI-Flash to work (untested)
 

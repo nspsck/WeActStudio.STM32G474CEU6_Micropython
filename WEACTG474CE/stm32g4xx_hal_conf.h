@@ -8,7 +8,7 @@
 // Oscillator values in Hz
 #define HSE_VALUE               (8000000)
 #define LSE_VALUE               (32768)
-#define EXTERNAL_CLOCK_VALUE (12288000)
+#define EXTERNAL_CLOCK_VALUE    (24000)
 
 // Oscillator timeouts in ms
 #define HSE_STARTUP_TIMEOUT     (100)

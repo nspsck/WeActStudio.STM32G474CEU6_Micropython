@@ -25,7 +25,7 @@
 
 // Flash storage config
 #define MICROPY_HW_SPIFLASH_ENABLE_CACHE            (1)
-#define MICROPY_HW_ENABLE_INTERNAL_FLASH_STORAGE    (0)
+#define MICROPY_HW_ENABLE_INTERNAL_FLASH_STORAGE    (1)
 
 #if !MICROPY_HW_ENABLE_INTERNAL_FLASH_STORAGE
 // QSPI flash for storage
@@ -65,7 +65,7 @@ extern struct _spi_bdev_t spi_bdev;
 #define MICROPY_HW_RCC_RNG_CLKSOURCE        (RCC_RNGCLKSOURCE_HSI48)
 
 // 4 wait states
-#define MICROPY_HW_FLASH_LATENCY    FLASH_LATENCY_4
+// #define MICROPY_HW_FLASH_LATENCY    FLASH_LATENCY_4
 
 // USART
 #define MICROPY_HW_LPUART1_TX       (pin_A2)  // A2, B11
