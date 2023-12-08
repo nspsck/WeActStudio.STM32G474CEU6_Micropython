@@ -14,7 +14,7 @@ _ram_start = ORIGIN(RAM);
 _ram_end = ORIGIN(RAM) + LENGTH(RAM);
 
 _micropy_hw_internal_flash_storage_ram_cache_end = ORIGIN(RAM) + LENGTH(RAM);
-_micropy_hw_internal_flash_storage_ram_cache_start = _micropy_hw_internal_flash_storage_ram_cache_end - 2K; /* fs cache = 2K RAM */
+_micropy_hw_internal_flash_storage_ram_cache_start = _micropy_hw_internal_flash_storage_ram_cache_end - 4K; /* fs cache = 4K RAM to support various spi flash */
 
 /* Define the stack.  The stack is full descending so begins just above last byte
    of RAM.  Note that EABI requires the stack to be 8-byte aligned for a call. */
