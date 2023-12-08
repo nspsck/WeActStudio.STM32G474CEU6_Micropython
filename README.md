@@ -7,7 +7,7 @@ What works:
 Weird behavior:
 - Floating points and integer arithmetics seems to be slower than the F4 series on the same clock by a huge margin.
 
-## Required tweaks for QSPI-Flash to work (untested)
+## Required tweaks for QSPI-Flash to work
 
 You can follow this thread: [https://github.com/micropython/micropython/pull/12512](https://github.com/micropython/micropython/pull/12512).
 Basically you add `STM32G4` to the `#if defined()` list in the `ports/stm32/mpu.h` file like below:
