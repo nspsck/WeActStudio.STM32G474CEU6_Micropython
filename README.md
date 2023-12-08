@@ -1,9 +1,6 @@
 # WeActStudio.STM32G474CEU6_Micropython
 
 ## Status
-Untested:
-- QSPI Flash.
-
 What works:
 - Everything except changing frequency using `freq()` provided either by `machine` or `pyb` module.
 
